@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GreenHarvest - Organic Farming</title>
+<title>GreenHarvest Organic Farm</title>
 
 <style>
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #f4fff4;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
 /* HEADER */
@@ -26,11 +26,6 @@ header h1 {
     font-size: 50px;
 }
 
-header p {
-    font-size: 20px;
-}
-
-/* BUTTON */
 .btn {
     background: #28a745;
     color: white;
@@ -42,92 +37,97 @@ header p {
 
 /* SECTION */
 .section {
-    padding: 50px 20px;
+    padding: 60px 20px;
     text-align: center;
-}
-
-.section h2 {
-    color: #2e7d32;
 }
 
 /* PRODUCTS */
 .products {
     display: flex;
     justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .card {
-    background: white;
     width: 250px;
-    border-radius: 15px;
     padding: 20px;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    border-radius: 15px;
+    background: #f9f9f9;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
 }
 
-.card:hover {
-    transform: scale(1.05);
+/* CONTACT */
+.contact {
+    background: #2e7d32;
+    color: white;
 }
 
 /* FOOTER */
 footer {
-    background: #2e7d32;
+    background: black;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
     <h1>🌱 GreenHarvest Farms</h1>
-    <p>100% Natural & Chemical-Free Organic Products</p>
-    <a href="#" class="btn">Shop Now</a>
+    <p>100% Natural & Chemical-Free Products</p>
+    
+    <!-- BUTTON WORKING -->
+    <a href="#products" class="btn">View Products</a>
+    <a href="#contact" class="btn">Contact Farmer</a>
 </header>
 
+<!-- ABOUT -->
 <section class="section">
-    <h2>🌾 About Our Farm</h2>
-    <p>We provide fresh, natural, and chemical-free products directly from our farms. Our mission is to promote healthy living and sustainable agriculture.</p>
+    <h2>🌾 About Us</h2>
+    <p>We provide fresh organic vegetables, fruits, and natural products directly from farmers without chemicals.</p>
 </section>
 
-<section class="section">
-    <h2>🥬 Our Organic Products</h2>
+<!-- PRODUCTS -->
+<section id="products" class="section">
+    <h2>🥬 Our Products</h2>
 
     <div class="products">
         <div class="card">
-            <h3>Fresh Vegetables</h3>
-            <p>No chemicals, 100% organic farming</p>
+            <h3>Vegetables</h3>
+            <p>Fresh organic vegetables</p>
         </div>
 
         <div class="card">
-            <h3>Natural Fruits</h3>
-            <p>Farm fresh and naturally grown</p>
+            <h3>Fruits</h3>
+            <p>Natural farm fruits</p>
         </div>
 
         <div class="card">
-            <h3>Organic Grains</h3>
-            <p>Healthy and nutritious products</p>
+            <h3>Grains</h3>
+            <p>Healthy organic grains</p>
         </div>
 
         <div class="card">
-            <h3>Cold Pressed Oils</h3>
-            <p>Traditional and chemical-free oils</p>
+            <h3>Oils</h3>
+            <p>Cold pressed oils</p>
         </div>
     </div>
 </section>
 
-<section class="section">
-    <h2>🚜 Why Choose Us?</h2>
-    <p>✔ No Chemicals<br>
-       ✔ Direct from Farmers<br>
-       ✔ Healthy & Fresh<br>
-       ✔ Affordable Prices</p>
+<!-- CONTACT -->
+<section id="contact" class="section contact">
+    <h2>📞 Contact Farmer</h2>
+    <p>Call / WhatsApp: +91-9701130916</p>
+
+    <!-- WHATSAPP BUTTON -->
+    <a href="https://wa.me/919701130916" class="btn">Chat on WhatsApp</a>
 </section>
 
+<!-- FOOTER -->
 <footer>
     <p>© 2026 GreenHarvest Farms | Built by Ganesh</p>
 </footer>
