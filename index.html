@@ -8,13 +8,14 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     scroll-behavior: smooth;
+    background: linear-gradient(135deg, #d4fc79, #96e6a1);
 }
 
 /* HEADER */
 header {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
     url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6');
     background-size: cover;
     color: white;
@@ -22,45 +23,75 @@ header {
     padding: 120px 20px;
 }
 
-header h1 {
-    font-size: 50px;
-}
-
+/* BUTTON STYLE */
 .btn {
-    background: #28a745;
+    background: linear-gradient(45deg, #ff9800, #ff5722);
     color: white;
     padding: 12px 25px;
-    border-radius: 25px;
+    border-radius: 30px;
     text-decoration: none;
+    display: inline-block;
+    margin: 10px;
     font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
 }
 
 /* SECTION */
 .section {
-    padding: 60px 20px;
+    padding: 50px;
     text-align: center;
 }
 
 /* PRODUCTS */
 .products {
     display: flex;
+    gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
 }
 
 .card {
     width: 250px;
     padding: 20px;
     border-radius: 15px;
-    background: #f9f9f9;
-    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+    background: white;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* POPUP */
+.popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    top: 0;
+    left: 0;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    margin: 10% auto;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
 }
 
 /* CONTACT */
 .contact {
-    background: #2e7d32;
-    color: white;
+    background: linear-gradient(135deg, #43e97b, #38f9d7);
+    color: black;
+    padding: 50px;
 }
 
 /* FOOTER */
@@ -68,69 +99,84 @@ footer {
     background: black;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
     <h1>🌱 GreenHarvest Farms</h1>
     <p>100% Natural & Chemical-Free Products</p>
-    
-    <!-- BUTTON WORKING -->
+
     <a href="#products" class="btn">View Products</a>
     <a href="#contact" class="btn">Contact Farmer</a>
 </header>
 
-<!-- ABOUT -->
-<section class="section">
-    <h2>🌾 About Us</h2>
-    <p>We provide fresh organic vegetables, fruits, and natural products directly from farmers without chemicals.</p>
-</section>
-
-<!-- PRODUCTS -->
 <section id="products" class="section">
     <h2>🥬 Our Products</h2>
 
     <div class="products">
+
         <div class="card">
             <h3>Vegetables</h3>
             <p>Fresh organic vegetables</p>
+            <button class="btn" onclick="showProduct('Vegetables - 100% organic, no chemicals')">View</button>
         </div>
 
         <div class="card">
             <h3>Fruits</h3>
             <p>Natural farm fruits</p>
+            <button class="btn" onclick="showProduct('Fruits - naturally grown, rich in vitamins')">View</button>
         </div>
 
         <div class="card">
             <h3>Grains</h3>
             <p>Healthy organic grains</p>
+            <button class="btn" onclick="showProduct('Grains - traditional and healthy')">View</button>
         </div>
 
         <div class="card">
             <h3>Oils</h3>
             <p>Cold pressed oils</p>
+            <button class="btn" onclick="showProduct('Oils - pure and chemical-free')">View</button>
         </div>
+
     </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section contact">
+<section id="contact" class="contact">
     <h2>📞 Contact Farmer</h2>
-    <p>Call / WhatsApp: +91-9701130916</p>
+    <p>Call / WhatsApp: <b>+91-9032870708</b></p>
 
-    <!-- WHATSAPP BUTTON -->
-    <a href="https://wa.me/919701130916" class="btn">Chat on WhatsApp</a>
+    <a href="https://wa.me/919032870708" class="btn">Chat on WhatsApp</a>
 </section>
 
-<!-- FOOTER -->
+<!-- POPUP -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <h3>Product Details</h3>
+        <p id="popupText"></p>
+        <button class="btn" onclick="closePopup()">Close</button>
+    </div>
+</div>
+
 <footer>
-    <p>© 2026 GreenHarvest Farms | Built by Ganesh</p>
+    © 2026 GreenHarvest Farms | Built by Ganesh
 </footer>
+
+<script>
+function showProduct(text) {
+    document.getElementById("popupText").innerText = text;
+    document.getElementById("popup").style.display = "block";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
 
 </body>
 </html>
